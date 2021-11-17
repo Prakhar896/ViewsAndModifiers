@@ -38,10 +38,21 @@ struct ContentView: View {
 //        Text("Goodbye")
 //        Text("World")
         
-        Button("Hello, world!") {
-            useRedText.toggle()
+//        Button("Hello, world!") {
+//            useRedText.toggle()
+//        }
+//        .foregroundColor(useRedText ? .red: .blue)
+        
+        VStack {
+            Text("Gryffindor")
+                .font(.largeTitle) //  the child's modifier is prioritised
+                .blur(radius: 0) // this will not work as blur is a regular modifier
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
         }
-        .foregroundColor(useRedText ? .red: .blue)
+        .font(.title) // this is called an environment modifier
+        .blur(radius: 5) // regular modifiers are separate from environment modifiers
     }
 }
 
